@@ -2,6 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager, ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+import logging
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
@@ -22,3 +23,5 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('http://nytimes.com')
 print(driver.title)
+logging.info("info log")
+logging.error("ERROR")
